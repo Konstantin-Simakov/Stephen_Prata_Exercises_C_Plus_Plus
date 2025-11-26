@@ -11,9 +11,9 @@ struct box {
 
 // Function template:
 template <typename Type>
-Type & larger(const Type & t1, const Type & t2);
+Type larger(const Type & t1, const Type & t2);
 // Implicit specialization:
-template <> box & larger(const box & b1, const box & b2);
+template <> box larger(const box & b1, const box & b2);
 // Ordinary function:
 void set_volume(box & b);
 
@@ -27,20 +27,22 @@ int main(void)
 
 	cout << "Larger from " << b1.maker << " and " << b2.maker 
 		 << " is " << larger(b1, b2).maker << ".\n";
+		 
+	// The function larger() will generate temporary variables within its definition scope.
 	cout << "Larger from " << 5 << " and " << 3 << " is " << larger(5, 3) << ".\n";
 
 	return 0;
 }
 
 template <typename Type>
-Type & larger(const Type & t1, const Type & t2)
+Type larger(const Type & t1, const Type & t2)
 {
-	return (Type &) (t1 > t2 ? t1 : t2);
+	return t1 > t2 ? t1 : t2;
 }
 
-template <> box & larger(const box & b1, const box & b2)
+template <> box larger(const box & b1, const box & b2)
 {
-	return (box &) (b1.volume > b2.volume ? b1 : b2);
+	return b1.volume > b2.volume ? b1 : b2;
 }
 
 void set_volume(box & b)
