@@ -24,15 +24,16 @@ int main(void)
 void output(const char * str, int arg)
 {
 	using namespace std;
-	static int count;				// == static int count = 0;
-	cout << count + 1 << endl;		// Function call number
+	static int count = 1;
+	cout << count << endl;			// Function calls number
 
 	if (0 == arg)
 		cout << str << endl;
 	else
 	{	
-		for (int i = 0; i < count; i++)
+		for (int i = 1; i <= count; i++)
 			cout << str << endl;
 	}
-	++count;						// Function call count
+	
+	++count;						// Function calls count
 }
