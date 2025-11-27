@@ -8,7 +8,7 @@ struct Candy_bar {
 	int calories;
 };
 
-void set(Candy_bar &, const char [] = "Millennium Munch", 
+void set(Candy_bar &, const char * = "Millennium Munch", 
 		double = 2.85, int = 350);
 void show(const Candy_bar &);
 
@@ -31,7 +31,7 @@ int main(void)
 	return 0;
 }
 
-void set(Candy_bar & cb, const char str[], double wt, int cal)
+void set(Candy_bar & cb, const char * str, double wt, int cal)
 {
 	strcpy(cb.name, str);
 	cb.weight = wt;
