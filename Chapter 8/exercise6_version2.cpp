@@ -4,7 +4,7 @@
 
 template <typename T>
 T maxn(T arr[], int n);
-const char * maxn(const char * arr[], int n);
+template <> const char * maxn(const char * arr[], int n);
 
 int main(void)
 {
@@ -43,7 +43,7 @@ T maxn(T arr[], int n)
 	return max;
 }
 
-const char * maxn(const char * arr[], int n)
+template <> const char * maxn(const char * arr[], int n)
 {
 	const char * max_len_str = arr[0];
 
