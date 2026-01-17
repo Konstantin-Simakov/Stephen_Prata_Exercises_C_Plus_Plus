@@ -1,12 +1,10 @@
 // exercise3_version2.cpp -- Chapter 9
-#include <iostream>
-#include <new>			// For placement 'new' operation
-#include <cstring>		// For strcpy()
-#include <cmath>		// For pow()
 
-const int NUM = 2;		// The number of elements in the 'Chaff's array
+#include <iostream>
+#include <cstring>		// For strcpy()
+
+const int BUF = 2;		// The number of elements in the 'Chaff's array
 const int SIZE = 20;	// The size of struct member of char array type 
-const int BUF = pow(2, 9);	// The size of buffer (in 'char's type)
 
 struct Chaff {
 	char dross[SIZE];
@@ -20,15 +18,13 @@ int main(void)
 {
 	using std::cout;
 	using std::cin;
-	// Dynamic allocation for buffer
-	char * buf = new char[BUF];
-	Chaff * chaffs = new(buf) Chaff[NUM];
+	Chaff * chaffs = new Chaff[BUF];
 	char dr[SIZE];								// Temporary array of char type
 	int sl;										// Temporary variable of int type
 	int i = 0;
 
-	cout << "Enter up to " << NUM << " chaffs.\n";
-	for (i = 0; i < NUM; i++)
+	cout << "Enter up to " << BUF << " chaffs.\n";
+	for (i = 0; i < BUF; i++)
 	{
 		cout << "Enter a next dross (or empty line to end it): ";
 		cin.getline(dr, SIZE);

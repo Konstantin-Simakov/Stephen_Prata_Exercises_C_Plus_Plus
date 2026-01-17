@@ -13,7 +13,7 @@ struct Chaff {
 
 Chaff buffer[BUF];
 
-void set_chaff(Chaff & r_ch, const char * dr, int sl);
+void set_chaff(Chaff & chf, const char * dr, int sl);
 void show_chaffs(const Chaff chaffs[], int n);
 
 int main(void)
@@ -23,7 +23,7 @@ int main(void)
 	Chaff * chaffs = new(buffer) Chaff[BUF];
 	char dr[SIZE];								// Temporary array of char type
 	int sl;										// Temporary variable of int type
-	int i = 0;
+	int i;
 
 	cout << "Enter up to " << BUF << " chaffs.\n";
 	for (i = 0; i < BUF; i++)
@@ -54,10 +54,10 @@ int main(void)
 	return 0;
 }
 
-void set_chaff(Chaff & r_ch, const char * dr, int sl)
+void set_chaff(Chaff & chf, const char * dr, int sl)
 {
-	strcpy(r_ch.dross, dr);
-	r_ch.slag = sl;
+	strcpy(chf.dross, dr);
+	chf.slag = sl;
 }
 
 void show_chaffs(const Chaff chaffs[], int n)
