@@ -4,6 +4,14 @@
 #ifndef EXERCISE1_H_
 #define EXERCISE1_H_
 
+#include <iostream>
+
+inline void eatline(void)
+{
+    while (std::cin.get() != '\n')
+        continue;
+}
+
 namespace GOLF
 {
 	const int SIZE = 100;		// Size of Golf array
@@ -20,4 +28,4 @@ namespace GOLF
 	void show_golf(const Golf & golf);
 }
 
-#endif		// For exercise1.h
+#endif		// For EXERCISE1_H_

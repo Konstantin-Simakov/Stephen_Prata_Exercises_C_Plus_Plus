@@ -1,11 +1,10 @@
 // exercie1_support.cpp -- Chapter 9
 // Compile along with exercie1.cpp
 
+#include "exercise1.h"		// For struct definition and function prototypes
 #include <iostream>
 #include <cstring>			// For strcpy()
 #include <cstdlib>			// For exit(), EXIT_FAILURE
-#include "exercise1.h"		// For struct definition and function prototypes
-#include "exercise1.h"		// For struct definition and function prototypes
 
 namespace GOLF
 {
@@ -32,7 +31,7 @@ namespace GOLF
 			}
 		}
 
-		if (!temp[0])
+		if (!temp[0])         // Empty line is entered.
 			ret_val = 0;
 		else
 		{
@@ -40,12 +39,10 @@ namespace GOLF
 			while (!(cin >> hc) || hc < 0)
 			{
 				cin.clear();
-				while (cin.get() != '\n')
-					continue;
+				eatline();
 				cout << "Bad input. Only integer >= 0: ";
 			}
-			while (cin.get() != '\n')
-				continue;
+            eatline();
 
 			handicap(golf, hc);
 			set_golf(golf, temp, hc);
