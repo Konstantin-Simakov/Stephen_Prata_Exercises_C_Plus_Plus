@@ -6,18 +6,18 @@
 
 namespace SALES
 {
-	const int QUARTERS = 4;
+    const int QUARTERS = 4;
 
-	struct Sales {
-		double sales[QUARTERS];
-		double average;
-		double max;
-		double min;
-	};
+    struct Sales {
+        double sales[QUARTERS];
+        double average;
+        double max;
+        double min;
+    };
 
-	void set_sales(Sales & s, const double arr[], int n);
-	void set_sales(Sales & s);
-	void show_sales(const Sales & s);
+    void set_sales(Sales & s, const double arr[], int n);
+    void set_sales(Sales & s);
+    void show_sales(const Sales & s);
 }
 
-#endif
+#endif  // For EXERCISE4_H_
