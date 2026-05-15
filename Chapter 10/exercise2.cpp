@@ -1,4 +1,4 @@
-// exercise2.cpp
+// exercise2.cpp -- Chapter 10
 // Test Person class.
 
 #include "exercise2.h"

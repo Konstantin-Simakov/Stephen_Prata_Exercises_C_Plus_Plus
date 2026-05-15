@@ -1,4 +1,4 @@
-// exercise2.h
+// exercise2.h -- Chapter 10
 
 #ifndef EXERCISE2_H_
 #define EXERCISE2_H_

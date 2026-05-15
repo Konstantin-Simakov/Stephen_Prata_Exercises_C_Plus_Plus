@@ -1,4 +1,4 @@
-// exercise1.h
+// exercise1.h -- Chapter 10
 // Compile with exercise1.cpp
 
 #ifndef EXERCISE1_H_
