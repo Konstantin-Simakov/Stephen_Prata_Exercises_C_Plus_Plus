@@ -7,7 +7,7 @@ void List::add(const Item & it)
 {
     Node * newNode = new Node {it, NULL};
     
-    if (this->isEmpty()) {
+    if (isEmpty()) {
         pHead = newNode;
     } else {
         Node * last = pHead;
@@ -20,7 +20,7 @@ void List::add(const Item & it)
 
 void List::visit(void (* pf)(Item & it))
 {
-    if (!this->isEmpty()) {
+    if (!isEmpty()) {
         Node * iter = pHead;
         while (iter->next != NULL) {
             pf(iter->item);
@@ -32,7 +32,7 @@ void List::visit(void (* pf)(Item & it))
 
 void List::empty(void)
 {
-    if (!this->isEmpty()) {
+    if (!isEmpty()) {
         Node * curr = pHead;
         Node * prev = curr;
     
