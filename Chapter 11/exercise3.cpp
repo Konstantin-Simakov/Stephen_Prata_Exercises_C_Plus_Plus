@@ -22,7 +22,6 @@ int main(void)
     double dstep;
     int k, attempts;
 
-
     cout << "Enter the number of attempts (>0): ";
     if (!(cin >> attempts) || attempts <= 0) {
         cout << "Incorrect input.\n";
